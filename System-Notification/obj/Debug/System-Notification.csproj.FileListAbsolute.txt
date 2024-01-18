@@ -1,0 +1,10 @@
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Debug\System-Notification.csprojAssemblyReference.cache
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Debug\System_Notification.Form1.resources
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Debug\System_Notification.Properties.Resources.resources
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Debug\System-Notification.csproj.GenerateResource.cache
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Debug\System-Notification.csproj.CoreCompileInputs.cache
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\bin\Debug\System-Notification.exe.config
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\bin\Debug\System-Notification.exe
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\bin\Debug\System-Notification.pdb
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Debug\System-Notification.exe
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Debug\System-Notification.pdb
