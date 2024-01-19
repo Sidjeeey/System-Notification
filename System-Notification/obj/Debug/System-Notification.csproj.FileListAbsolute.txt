@@ -8,3 +8,8 @@ D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\bi
 D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\bin\Debug\System-Notification.pdb
 D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Debug\System-Notification.exe
 D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Debug\System-Notification.pdb
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\bin\Debug\EntityFramework.dll
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\bin\Debug\EntityFramework.SqlServer.dll
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\bin\Debug\EntityFramework.xml
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\bin\Debug\EntityFramework.SqlServer.xml
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Debug\System-Notification.csproj.CopyComplete
