@@ -93,6 +93,16 @@ namespace System_Notification.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Green_White_Modern_Pastures_in_Iceland_Desktop_Wallpaper__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Green White Modern Pastures in Iceland Desktop Wallpaper (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Untitled_1 {
             get {
                 object obj = ResourceManager.GetObject("Untitled-1", resourceCulture);

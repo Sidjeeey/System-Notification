@@ -129,6 +129,7 @@
       <DependentUpon>EmpModel.edmx</DependentUpon>
       <LastGenOutput>EmpModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Green White Modern Pastures in Iceland Desktop Wallpaper %281%29.png" />
     <None Include="Resources\12312312 copy1.jpg" />
     <None Include="Resources\12312312 copy.jpg" />
     <None Include="Resources\Untitled-1.jpg" />
