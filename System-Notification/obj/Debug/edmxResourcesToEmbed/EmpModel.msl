@@ -11,6 +11,7 @@
           <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="EmpNumber" ColumnName="EmpNumber" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

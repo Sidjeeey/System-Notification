@@ -55,23 +55,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmpModel.Context.cs">
+    <Compile Include="DBModels.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EmpModel.Context.tt</DependentUpon>
+      <DependentUpon>DBModels.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="EmpModel.cs">
+    <Compile Include="DBModels.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EmpModel.tt</DependentUpon>
+      <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="EmpModel.Designer.cs">
+    <Compile Include="DBModels.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EmpModel.edmx</DependentUpon>
+      <DependentUpon>DBModels.edmx</DependentUpon>
     </Compile>
     <Compile Include="Empolyee_Table.cs">
-      <DependentUpon>EmpModel.tt</DependentUpon>
+      <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -94,12 +94,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="EmpModel.edmx">
+    <EntityDeploy Include="DBModels.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EmpModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>DBModels.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="EmpModel.edmx.diagram">
-      <DependentUpon>EmpModel.edmx</DependentUpon>
+    <None Include="DBModels.edmx.diagram">
+      <DependentUpon>DBModels.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -119,21 +119,23 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="EmpModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EmpModel.edmx</DependentUpon>
-      <LastGenOutput>EmpModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="EmpModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EmpModel.edmx</DependentUpon>
-      <LastGenOutput>EmpModel.cs</LastGenOutput>
-    </Content>
     <None Include="Resources\Green White Modern Pastures in Iceland Desktop Wallpaper %281%29.png" />
     <None Include="Resources\12312312 copy1.jpg" />
     <None Include="Resources\12312312 copy.jpg" />
     <None Include="Resources\Untitled-1.jpg" />
     <None Include="Resources\Asset 1%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DBModels.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBModels.edmx</DependentUpon>
+      <LastGenOutput>DBModels.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DBModels.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBModels.edmx</DependentUpon>
+      <LastGenOutput>DBModels.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

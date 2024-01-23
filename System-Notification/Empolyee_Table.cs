@@ -14,7 +14,7 @@ namespace System_Notification
     
     public partial class Empolyee_Table
     {
-        public static object CurrentRow { get; internal set; }
+        public int EmpNumber { get; set; }
         public string EmpID { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
