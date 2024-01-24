@@ -93,6 +93,26 @@ namespace System_Notification.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FTP_Logo_With_Name___transparent_bg {
+            get {
+                object obj = ResourceManager.GetObject("FTP Logo With Name - transparent bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FTP_Logo_With_Name___transparent_bg___Copy__4_ {
+            get {
+                object obj = ResourceManager.GetObject("FTP Logo With Name - transparent bg - Copy (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Green_White_Modern_Pastures_in_Iceland_Desktop_Wallpaper__1_ {
             get {
                 object obj = ResourceManager.GetObject("Green White Modern Pastures in Iceland Desktop Wallpaper (1)", resourceCulture);

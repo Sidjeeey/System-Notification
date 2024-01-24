@@ -58,13 +58,11 @@ namespace System_Notification
         {
             Clear();
             LoadData();
-            
         }  
-        
-        
-       
+
         private void BttnSave_Click(object sender, EventArgs e)
         {
+            
             model.EmpID = EmpIdBox.Text.Trim();
             model.FirstName = FirstNameBox.Text.Trim();
             model.MiddleName = MiddleNameBox.Text.Trim();
@@ -79,7 +77,9 @@ namespace System_Notification
                 else
                 db.Entry(model).State = EntityState.Modified;
                 db.SaveChanges();
+                
             }
+            
             Clear();
             LoadData();
             MessageBox.Show("Saved Successfully");
@@ -148,6 +148,38 @@ namespace System_Notification
                     }
                 }
             }
+        }
+
+        // Button Style
+
+        private void BttnSave_MouseHover(object sender, EventArgs e)
+        {
+           BttnSave.BackColor = Color.Turquoise;
+        }
+
+        private void BttnSave_MouseLeave(object sender, EventArgs e)
+        {
+            BttnSave.BackColor = Color.Gainsboro;
+        }
+
+        private void BttnDelete_MouseHover(object sender, EventArgs e)
+        {
+            BttnDelete.BackColor = Color.Red;
+        }
+
+        private void BttnDelete_MouseLeave(object sender, EventArgs e)
+        {
+            BttnDelete.BackColor = Color.Gainsboro;
+        }
+
+        private void BttnCancel_MouseHover(object sender, EventArgs e)
+        {
+            BttnCancel.BackColor = Color.SandyBrown;
+        }
+
+        private void BttnCancel_MouseLeave(object sender, EventArgs e)
+        {
+            BttnCancel.BackColor = Color.Gainsboro;
         }
     }
 }
