@@ -1,6 +1,6 @@
 ﻿{
-  "BackgroundImageAbsolutePath": "D:\\Users\\cj.junio\\Downloads\\wall-titan-11606601470na1wostga6-removebg-preview.png",
-  "BackgroundImagesDirectoryAbsolutePath": "C:\\USERS\\CJ.JUNIO\\APPDATA\\LOCAL\\MICROSOFT\\VISUALSTUDIO\\15.0_72944E26\\EXTENSIONS\\0V4UU35K.QSH\\Images",
+  "BackgroundImageAbsolutePath": "D:\\Users\\cj.junio\\Downloads\\19972521-0-123307961-removebg-preview.png",
+  "BackgroundImagesDirectoryAbsolutePath": "c:\\users\\cj.junio\\appdata\\local\\microsoft\\visualstudio\\15.0_72944e26\\extensions\\0v4uu35k.qsh\\Images",
   "ExpandToIDE": false,
   "Extensions": ".png, .jpg, .gif, .bmp",
   "ImageBackgroundType": 0,
@@ -10,7 +10,7 @@
   "LoopSlideshow": true,
   "MaxHeight": 0,
   "MaxWidth": 0,
-  "Opacity": 0.75,
+  "Opacity": 0,
   "PositionHorizon": 1,
   "PositionVertical": 1,
   "ShuffleSlideshow": false,

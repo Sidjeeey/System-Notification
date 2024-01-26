@@ -25,6 +25,6 @@ namespace System_Notification
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Empolyee_Table> Empolyee_Table { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
     }
 }

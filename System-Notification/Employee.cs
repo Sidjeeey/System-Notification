@@ -12,7 +12,7 @@ namespace System_Notification
     using System;
     using System.Collections.Generic;
     
-    public partial class Empolyee_Table
+    public partial class Employee
     {
         public int EmpNumber { get; set; }
         public string EmpID { get; set; }

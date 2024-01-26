@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="EmplyeeCertManagementModelStoreContainer" CdmEntityContainer="EmployeeEntities">
-    <EntitySetMapping Name="Empolyee_Table">
-      <EntityTypeMapping TypeName="EmplyeeCertManagementModel.Empolyee_Table">
-        <MappingFragment StoreEntitySet="Empolyee_Table">
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="EmplyeeCertManagementModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
           <ScalarProperty Name="ValidUntil" ColumnName="ValidUntil" />
           <ScalarProperty Name="IssuedOn" ColumnName="IssuedOn" />
           <ScalarProperty Name="CertificateNumber" ColumnName="CertificateNumber" />

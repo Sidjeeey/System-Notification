@@ -5,7 +5,7 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="EmplyeeCertManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Empolyee_Table">
+        <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="EmpNumber" />
           </Key>
@@ -19,16 +19,16 @@
           <Property Name="ValidUntil" Type="date" />
         </EntityType>
         <EntityContainer Name="EmplyeeCertManagementModelStoreContainer">
-          <EntitySet Name="Empolyee_Table" EntityType="Self.Empolyee_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EmplyeeCertManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="EmployeeEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Empolyee_Table" EntityType="EmplyeeCertManagementModel.Empolyee_Table" />
+          <EntitySet Name="Employees" EntityType="EmplyeeCertManagementModel.Employee" />
         </EntityContainer>
-        <EntityType Name="Empolyee_Table">
+        <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="EmpNumber" />
           </Key>
@@ -47,9 +47,9 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="EmplyeeCertManagementModelStoreContainer" CdmEntityContainer="EmployeeEntities">
-          <EntitySetMapping Name="Empolyee_Table">
-            <EntityTypeMapping TypeName="EmplyeeCertManagementModel.Empolyee_Table">
-              <MappingFragment StoreEntitySet="Empolyee_Table">
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="EmplyeeCertManagementModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
                 <ScalarProperty Name="ValidUntil" ColumnName="ValidUntil" />
                 <ScalarProperty Name="IssuedOn" ColumnName="IssuedOn" />
                 <ScalarProperty Name="CertificateNumber" ColumnName="CertificateNumber" />

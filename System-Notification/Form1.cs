@@ -15,7 +15,7 @@ namespace System_Notification
     
     public partial class Form1 : Form
     {
-        Empolyee_Table model = new Empolyee_Table();
+        Employee model = new Employee();
         public Form1()
         {
             InitializeComponent();
@@ -68,12 +68,15 @@ namespace System_Notification
             model.MiddleName = MiddleNameBox.Text.Trim();
             model.LastName = LastNameBox.Text.Trim();
             model.CertificateNumber = CertNoBox.Text.Trim();
-            model.IssuedOn = DateTime.Parse(IssuedOnBox.Text.Trim());
-            model.ValidUntil = DateTime.Parse(IssuedOnBox.Text.Trim());
+            if (!string.IsNullOrEmpty(IssuedOnBox.Text) && !string.IsNullOrEmpty(ValidUntilBox.Text))
+            {
+                model.IssuedOn = DateTime.Parse(IssuedOnBox.Text.Trim());
+                model.ValidUntil = DateTime.Parse(ValidUntilBox.Text.Trim());
+            }
             using (EmployeeEntities db = new EmployeeEntities())
             {
                 if (model.EmpNumber == 0)
-                    db.Empolyee_Table.Add(model);
+                    db.Employees.Add(model);
                 else
                 db.Entry(model).State = EntityState.Modified;
                 db.SaveChanges();
@@ -92,7 +95,7 @@ namespace System_Notification
                 dataGridView1.AutoGenerateColumns = false;
                 using (EmployeeEntities db = new EmployeeEntities ())
                 {
-                    dataGridView1.DataSource = db.Empolyee_Table.ToList<Empolyee_Table>();
+                    dataGridView1.DataSource = db.Employees.ToList<Employee>();
                 }
             }
         }
@@ -101,13 +104,13 @@ namespace System_Notification
         {
             if (dataGridView1.CurrentRow.Index != -1)
             {
-                model = new Empolyee_Table();  
+                model = new Employee();  
 
                 model.EmpNumber = Convert.ToInt32(dataGridView1.CurrentRow.Cells["dgEmpNumber"].Value);
 
                 using (EmployeeEntities db = new EmployeeEntities())
                 {
-                    model = db.Empolyee_Table.FirstOrDefault(x => x.EmpNumber == model.EmpNumber);
+                    model = db.Employees.FirstOrDefault(x => x.EmpNumber == model.EmpNumber);
 
                     if (model != null)
                     {
@@ -139,8 +142,8 @@ namespace System_Notification
                     var entry = db.Entry(model);
                     if(entry.State == EntityState.Detached)
                     {
-                        db.Empolyee_Table.Attach(model);
-                        db.Empolyee_Table.Remove(model);
+                        db.Employees.Attach(model);
+                        db.Employees.Remove(model);
                         db.SaveChanges();
                         LoadData();
                         Clear();
@@ -148,38 +151,6 @@ namespace System_Notification
                     }
                 }
             }
-        }
-
-        // Button Style
-
-        private void BttnSave_MouseHover(object sender, EventArgs e)
-        {
-           BttnSave.BackColor = Color.Turquoise;
-        }
-
-        private void BttnSave_MouseLeave(object sender, EventArgs e)
-        {
-            BttnSave.BackColor = Color.Gainsboro;
-        }
-
-        private void BttnDelete_MouseHover(object sender, EventArgs e)
-        {
-            BttnDelete.BackColor = Color.Red;
-        }
-
-        private void BttnDelete_MouseLeave(object sender, EventArgs e)
-        {
-            BttnDelete.BackColor = Color.Gainsboro;
-        }
-
-        private void BttnCancel_MouseHover(object sender, EventArgs e)
-        {
-            BttnCancel.BackColor = Color.SandyBrown;
-        }
-
-        private void BttnCancel_MouseLeave(object sender, EventArgs e)
-        {
-            BttnCancel.BackColor = Color.Gainsboro;
         }
     }
 }
