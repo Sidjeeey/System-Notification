@@ -1,4 +1,3 @@
-D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Debug\System-Notification.csprojAssemblyReference.cache
 D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Debug\System_Notification.Form1.resources
 D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Debug\System_Notification.Properties.Resources.resources
 D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Debug\System-Notification.csproj.GenerateResource.cache

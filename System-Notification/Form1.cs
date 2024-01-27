@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using System.Drawing;
 using System.Linq;
@@ -49,9 +50,9 @@ namespace System_Notification
 
         void Clear()
         {
-            EmpIdBox.Text = FirstNameBox.Text = MiddleNameBox.Text = LastNameBox.Text = CertNoBox.Text = IssuedOnBox.Text = ValidUntilBox.Text = "";
+            EmpNumberBox.Text = FirstNameBox.Text = MiddleNameBox.Text = LastNameBox.Text = CertNoBox.Text = IssuedOnBox.Text = ValidUntilBox.Text = "";
             BttnSave.Text = "Save";
-            model.EmpNumber = 0;
+            model.EmpID = 0;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -63,7 +64,7 @@ namespace System_Notification
         private void BttnSave_Click(object sender, EventArgs e)
         {
             
-            model.EmpID = EmpIdBox.Text.Trim();
+            model.EmpNumber = EmpNumberBox.Text.Trim();
             model.FirstName = FirstNameBox.Text.Trim();
             model.MiddleName = MiddleNameBox.Text.Trim();
             model.LastName = LastNameBox.Text.Trim();
@@ -75,7 +76,7 @@ namespace System_Notification
             }
             using (EmployeeEntities db = new EmployeeEntities())
             {
-                if (model.EmpNumber == 0)
+                if (model.EmpID == 0)
                     db.Employees.Add(model);
                 else
                 db.Entry(model).State = EntityState.Modified;
@@ -106,7 +107,7 @@ namespace System_Notification
             {
                 model = new Employee();  
 
-                model.EmpNumber = Convert.ToInt32(dataGridView1.CurrentRow.Cells["dgEmpNumber"].Value);
+                model.EmpID = Convert.ToInt32(dataGridView1.CurrentRow.Cells["dgEmpID"].Value);
 
                 using (EmployeeEntities db = new EmployeeEntities())
                 {
@@ -114,7 +115,7 @@ namespace System_Notification
 
                     if (model != null)
                     {
-                        EmpIdBox.Text = model.EmpID;
+                        EmpNumberBox.Text = model.EmpNumber;
                         FirstNameBox.Text = model.FirstName;
                         MiddleNameBox.Text = model.MiddleName;
                         LastNameBox.Text = model.LastName;
@@ -135,21 +136,58 @@ namespace System_Notification
 
         private void BttnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Delete this Record", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            using (EmployeeEntities db = new EmployeeEntities())
             {
-                using (EmployeeEntities db = new EmployeeEntities())
+                try
                 {
                     var entry = db.Entry(model);
-                    if(entry.State == EntityState.Detached)
+
+                    if (entry.State == EntityState.Detached)
                     {
                         db.Employees.Attach(model);
-                        db.Employees.Remove(model);
-                        db.SaveChanges();
-                        LoadData();
-                        Clear();
-                        MessageBox.Show("Deleted Successfully");
+                    }
+
+                    db.Employees.Remove(model);
+                    db.SaveChanges();
+                    LoadData();
+                    Clear();
+                    MessageBox.Show("Deleted Successfully");
+                }
+                catch (DbUpdateConcurrencyException ex)
+                {
+                    // Handle concurrency exception
+                    var entry = ex.Entries.Single();
+                    var databaseValues = entry.GetDatabaseValues();
+                    if (databaseValues == null)
+                    {
+                        MessageBox.Show("The record has been deleted by another user.");
+                    }
+                    else
+                    {
+                        // Refresh the entry with the values from the database
+                        entry.OriginalValues.SetValues(databaseValues);
+                        // You can display a message to the user indicating that the data has changed
+                        MessageBox.Show("The record has been modified by another user. Please try again.");
                     }
                 }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            List<Employee> employees = Seeder.GenerateRandomEmployees(10); // Change 10 to the number of samples you want
+
+            // Begin
+            // Create Context
+            // AddRange(employees)
+            // Save Changes
+            // End
+
+            // Display the generated employees
+            foreach (var employee in employees)
+            {
+                Console.WriteLine(employee);
             }
         }
     }

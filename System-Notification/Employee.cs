@@ -14,8 +14,8 @@ namespace System_Notification
     
     public partial class Employee
     {
-        public int EmpNumber { get; set; }
-        public string EmpID { get; set; }
+        public int EmpID { get; set; }
+        public string EmpNumber { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }

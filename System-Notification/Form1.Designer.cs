@@ -30,25 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ShowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dgEmpNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgEmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgMiddleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgCertificateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgIssuedOn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgValidUntil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BttnSave = new System.Windows.Forms.Button();
             this.BttnCancel = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -62,7 +54,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.ValidUntilBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.EmpIdBox = new System.Windows.Forms.TextBox();
+            this.EmpNumberBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.CertNoBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -71,6 +63,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.dgEmpNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgEmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgMiddleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgCertificateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgIssuedOn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgValidUntil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -109,14 +110,14 @@
             // 
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Aqua;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Myriad Pro Cond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Aqua;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Aqua;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Aqua;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Myriad Pro Cond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Aqua;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Aqua;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgEmpNumber,
@@ -127,96 +128,31 @@
             this.dgCertificateNumber,
             this.dgIssuedOn,
             this.dgValidUntil});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView1.Location = new System.Drawing.Point(17, 111);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView1.Size = new System.Drawing.Size(751, 424);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.DataGridView1_DoubleClick);
-            // 
-            // dgEmpNumber
-            // 
-            this.dgEmpNumber.DataPropertyName = "EmpNumber";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Green;
-            this.dgEmpNumber.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgEmpNumber.HeaderText = "EmpNumber";
-            this.dgEmpNumber.Name = "dgEmpNumber";
-            this.dgEmpNumber.ReadOnly = true;
-            this.dgEmpNumber.Visible = false;
-            // 
-            // dgEmpID
-            // 
-            this.dgEmpID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgEmpID.DataPropertyName = "EmpID";
-            this.dgEmpID.HeaderText = "Employee ID";
-            this.dgEmpID.Name = "dgEmpID";
-            this.dgEmpID.ReadOnly = true;
-            // 
-            // dgFirstName
-            // 
-            this.dgFirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgFirstName.DataPropertyName = "FirstName";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.dgFirstName.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgFirstName.HeaderText = "First Name";
-            this.dgFirstName.Name = "dgFirstName";
-            this.dgFirstName.ReadOnly = true;
-            // 
-            // dgMiddleName
-            // 
-            this.dgMiddleName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgMiddleName.DataPropertyName = "MiddleName";
-            this.dgMiddleName.HeaderText = "Middle Name";
-            this.dgMiddleName.Name = "dgMiddleName";
-            this.dgMiddleName.ReadOnly = true;
-            // 
-            // dgLastName
-            // 
-            this.dgLastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgLastName.DataPropertyName = "LastName";
-            this.dgLastName.HeaderText = "Last Name";
-            this.dgLastName.Name = "dgLastName";
-            this.dgLastName.ReadOnly = true;
-            // 
-            // dgCertificateNumber
-            // 
-            this.dgCertificateNumber.DataPropertyName = "CertificateNumber";
-            this.dgCertificateNumber.HeaderText = "Certificate Number";
-            this.dgCertificateNumber.Name = "dgCertificateNumber";
-            this.dgCertificateNumber.ReadOnly = true;
-            // 
-            // dgIssuedOn
-            // 
-            this.dgIssuedOn.DataPropertyName = "IssuedOn";
-            this.dgIssuedOn.HeaderText = "Issued On";
-            this.dgIssuedOn.Name = "dgIssuedOn";
-            this.dgIssuedOn.ReadOnly = true;
-            // 
-            // dgValidUntil
-            // 
-            this.dgValidUntil.DataPropertyName = "ValidUntil";
-            this.dgValidUntil.HeaderText = "Valid Until";
-            this.dgValidUntil.Name = "dgValidUntil";
-            this.dgValidUntil.ReadOnly = true;
             // 
             // BttnSave
             // 
@@ -338,12 +274,12 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "Valid Until :";
             // 
-            // EmpIdBox
+            // EmpNumberBox
             // 
-            this.EmpIdBox.Location = new System.Drawing.Point(792, 146);
-            this.EmpIdBox.Name = "EmpIdBox";
-            this.EmpIdBox.Size = new System.Drawing.Size(177, 20);
-            this.EmpIdBox.TabIndex = 16;
+            this.EmpNumberBox.Location = new System.Drawing.Point(792, 146);
+            this.EmpNumberBox.Name = "EmpNumberBox";
+            this.EmpNumberBox.Size = new System.Drawing.Size(177, 20);
+            this.EmpNumberBox.TabIndex = 16;
             // 
             // label7
             // 
@@ -351,9 +287,9 @@
             this.label7.Font = new System.Drawing.Font("Myriad Pro Light", 9.749999F, System.Drawing.FontStyle.Bold);
             this.label7.Location = new System.Drawing.Point(794, 127);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 16);
+            this.label7.Size = new System.Drawing.Size(115, 16);
             this.label7.TabIndex = 17;
-            this.label7.Text = "Employee ID";
+            this.label7.Text = "Employee Number";
             // 
             // CertNoBox
             // 
@@ -425,6 +361,83 @@
             this.panel5.Size = new System.Drawing.Size(80, 71);
             this.panel5.TabIndex = 0;
             // 
+            // dgEmpNumber
+            // 
+            this.dgEmpNumber.DataPropertyName = "EmpNumber";
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Green;
+            this.dgEmpNumber.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgEmpNumber.HeaderText = "EmpNumber";
+            this.dgEmpNumber.Name = "dgEmpNumber";
+            this.dgEmpNumber.ReadOnly = true;
+            // 
+            // dgEmpID
+            // 
+            this.dgEmpID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgEmpID.DataPropertyName = "EmpID";
+            this.dgEmpID.HeaderText = "Employee ID";
+            this.dgEmpID.Name = "dgEmpID";
+            this.dgEmpID.ReadOnly = true;
+            this.dgEmpID.Visible = false;
+            // 
+            // dgFirstName
+            // 
+            this.dgFirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgFirstName.DataPropertyName = "FirstName";
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            this.dgFirstName.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dgFirstName.HeaderText = "First Name";
+            this.dgFirstName.Name = "dgFirstName";
+            this.dgFirstName.ReadOnly = true;
+            // 
+            // dgMiddleName
+            // 
+            this.dgMiddleName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgMiddleName.DataPropertyName = "MiddleName";
+            this.dgMiddleName.HeaderText = "Middle Name";
+            this.dgMiddleName.Name = "dgMiddleName";
+            this.dgMiddleName.ReadOnly = true;
+            // 
+            // dgLastName
+            // 
+            this.dgLastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgLastName.DataPropertyName = "LastName";
+            this.dgLastName.HeaderText = "Last Name";
+            this.dgLastName.Name = "dgLastName";
+            this.dgLastName.ReadOnly = true;
+            // 
+            // dgCertificateNumber
+            // 
+            this.dgCertificateNumber.DataPropertyName = "CertificateNumber";
+            this.dgCertificateNumber.HeaderText = "Certificate Number";
+            this.dgCertificateNumber.Name = "dgCertificateNumber";
+            this.dgCertificateNumber.ReadOnly = true;
+            // 
+            // dgIssuedOn
+            // 
+            this.dgIssuedOn.DataPropertyName = "IssuedOn";
+            this.dgIssuedOn.HeaderText = "Issued On";
+            this.dgIssuedOn.Name = "dgIssuedOn";
+            this.dgIssuedOn.ReadOnly = true;
+            // 
+            // dgValidUntil
+            // 
+            this.dgValidUntil.DataPropertyName = "ValidUntil";
+            this.dgValidUntil.HeaderText = "Valid Until";
+            this.dgValidUntil.Name = "dgValidUntil";
+            this.dgValidUntil.ReadOnly = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Font = new System.Drawing.Font("Myriad Pro Light", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(681, 503);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 32);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Seeder";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,12 +445,13 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1005, 576);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.BttnDelete);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.CertNoBox);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.EmpIdBox);
+            this.Controls.Add(this.EmpNumberBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.ValidUntilBox);
             this.Controls.Add(this.label5);
@@ -488,11 +502,15 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox ValidUntilBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox EmpIdBox;
+        private System.Windows.Forms.TextBox EmpNumberBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox CertNoBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button BttnDelete;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgEmpNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgEmpID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgFirstName;
@@ -501,10 +519,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgCertificateNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgIssuedOn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgValidUntil;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button1;
     }
 }
 

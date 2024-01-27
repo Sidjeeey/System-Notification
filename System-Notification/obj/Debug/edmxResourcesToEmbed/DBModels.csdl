@@ -5,10 +5,10 @@
   </EntityContainer>
   <EntityType Name="Employee">
     <Key>
-      <PropertyRef Name="EmpNumber" />
+      <PropertyRef Name="EmpID" />
     </Key>
-    <Property Name="EmpNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="EmpID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmpID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
