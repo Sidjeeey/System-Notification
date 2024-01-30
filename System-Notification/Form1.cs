@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace System_Notification
 {
-    
+
     public partial class Form1 : Form
     {
         Employee model = new Employee();
@@ -59,13 +59,13 @@ namespace System_Notification
         {
             Clear();
             LoadData();
-        }  
+        }
 
         private void BttnSave_Click(object sender, EventArgs e)
         {
-            
+
             model.EmpNumber = EmpNumberBox.Text.Trim();
-            model.FirstName = FirstNameBox.Text.Trim();
+            model.FirstName = FirstNameBox.Text.Trim();  
             model.MiddleName = MiddleNameBox.Text.Trim();
             model.LastName = LastNameBox.Text.Trim();
             model.CertificateNumber = CertNoBox.Text.Trim();
@@ -79,22 +79,22 @@ namespace System_Notification
                 if (model.EmpID == 0)
                     db.Employees.Add(model);
                 else
-                db.Entry(model).State = EntityState.Modified;
+                    db.Entry(model).State = EntityState.Modified;
                 db.SaveChanges();
-                
+
             }
-            
+
             Clear();
             LoadData();
             MessageBox.Show("Saved Successfully");
 
-        } 
+        }
 
         void LoadData()
         {
             {
                 dataGridView1.AutoGenerateColumns = false;
-                using (EmployeeEntities db = new EmployeeEntities ())
+                using (EmployeeEntities db = new EmployeeEntities())
                 {
                     dataGridView1.DataSource = db.Employees.ToList<Employee>();
                 }
@@ -105,16 +105,17 @@ namespace System_Notification
         {
             if (dataGridView1.CurrentRow.Index != -1)
             {
-                model = new Employee();  
+                model = new Employee();
 
                 model.EmpID = Convert.ToInt32(dataGridView1.CurrentRow.Cells["dgEmpID"].Value);
 
                 using (EmployeeEntities db = new EmployeeEntities())
                 {
-                    model = db.Employees.FirstOrDefault(x => x.EmpNumber == model.EmpNumber);
+                    model = db.Employees.FirstOrDefault(x => x.EmpID == model.EmpID);
 
                     if (model != null)
                     {
+                        
                         EmpNumberBox.Text = model.EmpNumber;
                         FirstNameBox.Text = model.FirstName;
                         MiddleNameBox.Text = model.MiddleName;
@@ -125,6 +126,7 @@ namespace System_Notification
 
                         BttnSave.Text = "Update";
                         BttnDelete.Enabled = true;
+                        
                     }
                     else
                     {
@@ -156,17 +158,21 @@ namespace System_Notification
                 catch (DbUpdateConcurrencyException ex)
                 {
                     // Handle concurrency exception
+
                     var entry = ex.Entries.Single();
                     var databaseValues = entry.GetDatabaseValues();
                     if (databaseValues == null)
                     {
-                        MessageBox.Show("The record has been deleted by another user.");
+                        MessageBox.Show("Double click to Delete.");
                     }
                     else
                     {
                         // Refresh the entry with the values from the database
+
                         entry.OriginalValues.SetValues(databaseValues);
+
                         // You can display a message to the user indicating that the data has changed
+
                         MessageBox.Show("The record has been modified by another user. Please try again.");
                     }
                 }
@@ -175,19 +181,19 @@ namespace System_Notification
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            List<Employee> employees = Seeder.GenerateRandomEmployees(10); // Change 10 to the number of samples you want
-
-            // Begin
-            // Create Context
-            // AddRange(employees)
-            // Save Changes
-            // End
-
-            // Display the generated employees
-            foreach (var employee in employees)
+            using (EmployeeEntities context = new EmployeeEntities())
             {
-                Console.WriteLine(employee);
+                List<Employee> employees = Seeder.GenerateRandomEmployees(10);
+
+                // Add generated employees to the database
+
+                context.Employees.AddRange(employees);
+                context.SaveChanges();
+
+                // Retrieve the first employee from the database (for demonstration purposes)
+
+                Employee firstEmployee = context.Employees.FirstOrDefault();
+  
             }
         }
     }

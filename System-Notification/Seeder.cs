@@ -24,7 +24,7 @@ namespace System_Notification
                     EmpNumber = "E" + random.Next(100, 999) + "-" + random.Next(1000, 9999),
                     FirstName = RandomString(8),
                     MiddleName = RandomString(5),
-                    LastName = RandomString(10),
+                    LastName = RandomString(7),
                     CertificateNumber = RandomCertificateNumber(),
                     IssuedOn = RandomDate(),
                     ValidUntil = RandomDate()
@@ -54,8 +54,17 @@ namespace System_Notification
 
         static DateTime RandomDate()
         {
-            int range = (DateTime.Today - DateTime.Parse("01/01/2000")).Days;
-            return DateTime.Parse("01/01/2000").AddDays(random.Next(range));
+            int startYear = 2023;
+            int endYear = 2028;
+
+            // Choose a random year between 2023 and 2028
+            int randomYear = random.Next(startYear, endYear + 1);
+
+            DateTime startDate = new DateTime(randomYear, 1, 1);
+            DateTime endDate = new DateTime(randomYear, 12, 31);
+
+            int range = (endDate - startDate).Days;
+            return startDate.AddDays(random.Next(range));
         }
     }
 }
