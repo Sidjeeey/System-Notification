@@ -17,6 +17,10 @@ namespace System_Notification
     public partial class Form1 : Form
     {
         Employee model = new Employee();
+
+        private const int DaysBeforeExpiration = 5;
+        private Timer expirationCheckTimer;
+
         public Form1()
         {
             InitializeComponent();
@@ -38,9 +42,8 @@ namespace System_Notification
             if (this.WindowState == FormWindowState.Minimized)
             {
                 this.Hide();
-                notifyIcon1.ShowBalloonTip(1000, "Certificate Notification", " Certificate Expired as of Today, Click this to know more.", ToolTipIcon.Info);
+                CheckCertificateExpiration();
             }
-
         }
 
         private void BttnCancel_Click(object sender, EventArgs e)
@@ -59,35 +62,79 @@ namespace System_Notification
         {
             Clear();
             LoadData();
+
+            // Initialize and start the timer
+            expirationCheckTimer = new Timer();
+            expirationCheckTimer.Interval = 24 * 60 * 60 * 1000; // 24 hours
+            expirationCheckTimer.Tick += ExpirationCheckTimer_Tick;
+            expirationCheckTimer.Start();
+        }
+
+        private void ExpirationCheckTimer_Tick(object sender, EventArgs e)
+        {
+            CheckCertificateExpiration();
+        }
+
+        private void CheckCertificateExpiration()
+        {
+            using (EmployeeEntities db = new EmployeeEntities())
+            {
+                var allCertificates = db.Employees.ToList(); // Fetch all records
+
+                DateTime expirationDate = DateTime.Now.Date.AddDays(DaysBeforeExpiration);
+
+                var expiringCertificates = allCertificates
+                    .Where(x => x.ValidUntil.HasValue && x.ValidUntil.Value.Date <= expirationDate)
+                    .ToList();
+
+                if (expiringCertificates.Count == 0)
+                {
+                    // No certificates are expiring
+                    string noExpirationMessage = "No certificates are expiring within the specified time frame.";
+                    notifyIcon1.ShowBalloonTip(1000, "Certificate Expiration Check", noExpirationMessage, ToolTipIcon.Info);
+                }
+                else
+                {
+                    foreach (var certificate in expiringCertificates)
+                    {
+                        // Notify about expiring certificate
+                        string message = $"Certificate for {certificate.EmpNumber} {certificate.FirstName} {certificate.LastName} is expiring in {DaysBeforeExpiration} days.";
+                        notifyIcon1.ShowBalloonTip(1000, "Certificate Expiration Warning", message, ToolTipIcon.Warning);
+                    }
+                }
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Stop the timer when the form is closing
+            expirationCheckTimer.Stop();
         }
 
         private void BttnSave_Click(object sender, EventArgs e)
         {
-
             model.EmpNumber = EmpNumberBox.Text.Trim();
-            model.FirstName = FirstNameBox.Text.Trim();  
+            model.FirstName = FirstNameBox.Text.Trim();
             model.MiddleName = MiddleNameBox.Text.Trim();
             model.LastName = LastNameBox.Text.Trim();
             model.CertificateNumber = CertNoBox.Text.Trim();
-            if (!string.IsNullOrEmpty(IssuedOnBox.Text) && !string.IsNullOrEmpty(ValidUntilBox.Text))
-            {
-                model.IssuedOn = DateTime.Parse(IssuedOnBox.Text.Trim());
-                model.ValidUntil = DateTime.Parse(ValidUntilBox.Text.Trim());
-            }
+            model.IssuedOn = DateTime.Parse(IssuedOnBox.Text.Trim());
+            model.ValidUntil = DateTime.Parse(ValidUntilBox.Text.Trim());
+
             using (EmployeeEntities db = new EmployeeEntities())
             {
                 if (model.EmpID == 0)
                     db.Employees.Add(model);
                 else
                     db.Entry(model).State = EntityState.Modified;
-                db.SaveChanges();
 
+                db.SaveChanges();
             }
 
             Clear();
             LoadData();
+            CheckCertificateExpiration(); // Check for expiration after saving or updating
             MessageBox.Show("Saved Successfully");
-
         }
 
         void LoadData()
@@ -100,7 +147,7 @@ namespace System_Notification
                 }
             }
         }
-
+   
         private void DataGridView1_DoubleClick(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow.Index != -1)
@@ -115,7 +162,7 @@ namespace System_Notification
 
                     if (model != null)
                     {
-                        
+
                         EmpNumberBox.Text = model.EmpNumber;
                         FirstNameBox.Text = model.FirstName;
                         MiddleNameBox.Text = model.MiddleName;
@@ -181,20 +228,20 @@ namespace System_Notification
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (EmployeeEntities context = new EmployeeEntities())
-            {
-                List<Employee> employees = Seeder.GenerateRandomEmployees(10);
+            //using (EmployeeEntities context = new EmployeeEntities())
+            //{
+            //    List<Employee> employees = Seeder.GenerateRandomEmployees(10);
 
-                // Add generated employees to the database
+            //    // Add generated employees to the database
 
-                context.Employees.AddRange(employees);
-                context.SaveChanges();
+            //    context.Employees.AddRange(employees);
+            //    context.SaveChanges();
 
-                // Retrieve the first employee from the database (for demonstration purposes)
+            //    // Retrieve the first employee from the database (for demonstration purposes)
 
-                Employee firstEmployee = context.Employees.FirstOrDefault();
+            //    Employee firstEmployee = context.Employees.FirstOrDefault();
   
-            }
+            //}
         }
     }
 }
