@@ -62,8 +62,10 @@ namespace System_Notification
         {
             Clear();
             LoadData();
-
-            // Initialize and start the timer
+            InitializeStartTimer();
+        }
+        private void InitializeStartTimer()
+        {
             expirationCheckTimer = new Timer();
             expirationCheckTimer.Interval = 24 * 60 * 60 * 1000; // 24 hours
             expirationCheckTimer.Tick += ExpirationCheckTimer_Tick;
@@ -113,6 +115,10 @@ namespace System_Notification
 
         private void BttnSave_Click(object sender, EventArgs e)
         {
+            Save(); 
+        }
+        private void Save()
+        {
             model.EmpNumber = EmpNumberBox.Text.Trim();
             model.FirstName = FirstNameBox.Text.Trim();
             model.MiddleName = MiddleNameBox.Text.Trim();
@@ -137,7 +143,7 @@ namespace System_Notification
             MessageBox.Show("Saved Successfully");
         }
 
-        void LoadData()
+        private void LoadData()
         {
             {
                 dataGridView1.AutoGenerateColumns = false;
@@ -149,6 +155,10 @@ namespace System_Notification
         }
    
         private void DataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            DataView();
+        }
+        private void DataView()
         {
             if (dataGridView1.CurrentRow.Index != -1)
             {
@@ -173,7 +183,7 @@ namespace System_Notification
 
                         BttnSave.Text = "Update";
                         BttnDelete.Enabled = true;
-                        
+
                     }
                     else
                     {
@@ -181,9 +191,15 @@ namespace System_Notification
                     }
                 }
             }
+
         }
 
         private void BttnDelete_Click(object sender, EventArgs e)
+        {
+            Delete();
+        }
+
+        private void Delete()
         {
             using (EmployeeEntities db = new EmployeeEntities())
             {
@@ -226,22 +242,27 @@ namespace System_Notification
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void GenerateData_Click(object sender, EventArgs e)
         {
-            //using (EmployeeEntities context = new EmployeeEntities())
-            //{
-            //    List<Employee> employees = Seeder.GenerateRandomEmployees(10);
+            GenerateRandomSample();
+        }
 
-            //    // Add generated employees to the database
+        private void GenerateRandomSample()
+        {
+            using (EmployeeEntities context = new EmployeeEntities())
+            {
+                List<Employee> employees = Seeder.GenerateRandomEmployees(10);
 
-            //    context.Employees.AddRange(employees);
-            //    context.SaveChanges();
+                // Add generated employees to the database
 
-            //    // Retrieve the first employee from the database (for demonstration purposes)
+                context.Employees.AddRange(employees);
+                context.SaveChanges();
 
-            //    Employee firstEmployee = context.Employees.FirstOrDefault();
-  
-            //}
+                // Retrieve the first employee from the database (for demonstration purposes)
+
+                Employee firstEmployee = context.Employees.FirstOrDefault();
+
+            }
         }
     }
 }
