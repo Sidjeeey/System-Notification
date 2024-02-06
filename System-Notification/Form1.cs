@@ -13,12 +13,12 @@ using System.Windows.Forms;
 
 namespace System_Notification
 {
-
     public partial class Form1 : Form
     {
         Employee model = new Employee();
 
         private const int DaysBeforeExpiration = 5;
+
         private Timer expirationCheckTimer;
 
         public Form1()
@@ -64,6 +64,18 @@ namespace System_Notification
             LoadData();
             InitializeStartTimer();
         }
+
+        private void LoadData()
+        {
+            {
+                dataGridView1.AutoGenerateColumns = false;
+                using (EmployeeEntities db = new EmployeeEntities())
+                {
+                    dataGridView1.DataSource = db.Employees.ToList<Employee>();
+                }
+            }
+        }
+
         private void InitializeStartTimer()
         {
             expirationCheckTimer = new Timer();
@@ -115,9 +127,9 @@ namespace System_Notification
 
         private void BttnSave_Click(object sender, EventArgs e)
         {
-            Save(); 
+            SaveData(); 
         }
-        private void Save()
+        private void SaveData()
         {
             model.EmpNumber = EmpNumberBox.Text.Trim();
             model.FirstName = FirstNameBox.Text.Trim();
@@ -143,17 +155,6 @@ namespace System_Notification
             MessageBox.Show("Saved Successfully");
         }
 
-        private void LoadData()
-        {
-            {
-                dataGridView1.AutoGenerateColumns = false;
-                using (EmployeeEntities db = new EmployeeEntities())
-                {
-                    dataGridView1.DataSource = db.Employees.ToList<Employee>();
-                }
-            }
-        }
-   
         private void DataGridView1_DoubleClick(object sender, EventArgs e)
         {
             DataView();
@@ -196,10 +197,10 @@ namespace System_Notification
 
         private void BttnDelete_Click(object sender, EventArgs e)
         {
-            Delete();
+            DeleteEmployee();
         }
 
-        private void Delete()
+        private void DeleteEmployee()
         {
             using (EmployeeEntities db = new EmployeeEntities())
             {
@@ -244,7 +245,7 @@ namespace System_Notification
 
         private void GenerateData_Click(object sender, EventArgs e)
         {
-            GenerateRandomSample();
+            //GenerateRandomSample(); 
         }
 
         private void GenerateRandomSample()
