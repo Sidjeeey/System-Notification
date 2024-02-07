@@ -73,6 +73,11 @@
     <Compile Include="Employee.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="EmplyeeEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmplyeeEntities.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +106,17 @@
     </EntityDeploy>
     <None Include="DBModels.edmx.diagram">
       <DependentUpon>DBModels.edmx</DependentUpon>
+    </None>
+    <None Include="EmplyeeEntities.xsc">
+      <DependentUpon>EmplyeeEntities.xsd</DependentUpon>
+    </None>
+    <None Include="EmplyeeEntities.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmplyeeEntities.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EmplyeeEntities.xss">
+      <DependentUpon>EmplyeeEntities.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
