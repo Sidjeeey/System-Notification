@@ -79,7 +79,7 @@ namespace System_Notification
         private void InitializeStartTimer()
         {
             expirationCheckTimer = new Timer();
-            expirationCheckTimer.Interval = 24 * 60 * 60 * 1000; // 24 hours
+            expirationCheckTimer.Interval = 1 * 60 * 60 * 1000; // 1 hours
             expirationCheckTimer.Tick += ExpirationCheckTimer_Tick;
             expirationCheckTimer.Start();
         }
