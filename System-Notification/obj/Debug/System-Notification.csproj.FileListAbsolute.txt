@@ -14,3 +14,4 @@ D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\bi
 D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Debug\System-Notification.csproj.CopyComplete
 D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Debug\System-Notification.csprojAssemblyReference.cache
 D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Debug\System_Notification.Login_form.resources
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Debug\System_Notification.Splash_Screen.resources
