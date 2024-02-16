@@ -33,7 +33,7 @@ namespace System_Notification
             // Check if the username and password match
             if (AuthenticateUser(username, password))
             {
-                MessageBox.Show("Login successful!");
+                //MessageBox.Show("Login successful!");
                 Form1 mainForm = new Form1();
                 mainForm.Show();
                 this.Hide(); // Hide the login form
@@ -44,7 +44,7 @@ namespace System_Notification
             }
         }
 
-        private bool AuthenticateUser(string username, string password)
+        private bool AuthenticateUser(string username, string password)                                       
         {
             // Hardcoded username and password for demonstration purposes
             const string validUsername = "admin";

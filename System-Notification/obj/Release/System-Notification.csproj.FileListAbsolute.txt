@@ -1,0 +1,16 @@
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\bin\Release\System-Notification.exe.config
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\bin\Release\System-Notification.exe
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\bin\Release\System-Notification.pdb
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\bin\Release\EntityFramework.dll
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\bin\Release\EntityFramework.SqlServer.dll
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\bin\Release\EntityFramework.xml
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\bin\Release\EntityFramework.SqlServer.xml
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Release\System_Notification.Form1.resources
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Release\System_Notification.Login_form.resources
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Release\System_Notification.Properties.Resources.resources
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Release\System_Notification.Splash_Screen.resources
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Release\System-Notification.csproj.GenerateResource.cache
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Release\System-Notification.csproj.CoreCompileInputs.cache
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Release\System-Notification.csproj.CopyComplete
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Release\System-Notification.exe
+D:\Users\cj.junio\Documents\Workspace\System-Notification\System-Notification\obj\Release\System-Notification.pdb
